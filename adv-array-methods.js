@@ -71,10 +71,15 @@ const zooAnimals = [
     3. Return the new array
   💡 NOTE: the array returned should be an array of strings, and each string should follow this pattern: "name: {name}, scientific: {scientific name}"
   */
-
-function animalNames(/*Your Code Here*/) {
-  /*Your Code Here*/
-}
+const displayNames = [];
+zooAnimals.forEach(function animalNames (item){
+  return displayNames.push(item.animal_name, item.scientific_name);
+   
+});
+console.log(displayNames)
+// function animalNames(zooAnimals) {
+//   /*Your Code Here*/ 
+// }
 
 /* 🦁🦁🦁 Request 2: .map() 🦁🦁🦁
   The zoo needs a list of all their animal's names converted to lower case. 
@@ -86,9 +91,10 @@ function animalNames(/*Your Code Here*/) {
   💡 NOTE: Do some research for other methods that can help help you
   */
 
-function lowerCaseNames(/*Your Code Here*/) {
-  /*Your Code Here*/
-}
+let lowerCase = zooAnimals.map( function lowerCaseNames(item) {
+  return item.animal_name.toLowerCase();
+})
+console.log(lowerCase)
 
 /* 🦁🦁🦁 Request 3: .filter() 🦁🦁🦁
   The zoo is concerned about animals with a lower population count. 
@@ -98,9 +104,10 @@ function lowerCaseNames(/*Your Code Here*/) {
   3. Return this new array
   */
 
-function lowPopulationAnimals(/*Your Code Here*/) {
-  /*Your Code Here*/
-}
+let lowPop = zooAnimals.filter( function lowPopulationAnimals(item) {
+  return item.population < 5;
+});
+console.log(lowPop);
 
 /* 🦁🦁🦁 Request 4: .reduce() 🦁🦁🦁
   The zoo needs to know their total animal population across the United States. 
@@ -111,6 +118,7 @@ function lowPopulationAnimals(/*Your Code Here*/) {
   💡 NOTE: Remember the reduce method takes two arguments: a callback (which itself takes two args - the accumulator and the item), and an initial value for the count. Check MDN/W3Schools for syntax!
   */
 
-function USApop(/*Your Code Here*/) {
-  /*Your Code Here*/
-}
+let totalPop = zooAnimals.reduce( function USApop(accumulator, item) {
+  return accumulator + item.population
+}, 0)
+console.log(totalPop);

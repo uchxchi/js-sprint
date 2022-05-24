@@ -13,9 +13,9 @@ function myFunction() {
   }
   nestedFunction()
 }
-//myFunction();
+// myFunction();
 
-//🚀🚀🚀 ⬇️ 📝 Explanation here ⬇️ 📝 🚀🚀🚀:
+//🚀🚀🚀 ⬇️ 📝 Explanation here ⬇️ 📝 🚀🚀🚀: Nested function can access the variable because functions can access the variables of their parent or the function within which it is nested, this is known as lexical scoping.
 
 /* 🚀🚀🚀 Task 2: Counter 🚀🚀🚀 */
 /* Use summation to do the following:
@@ -26,6 +26,12 @@ function myFunction() {
 💡 NOTE: you may use a for loop for this function if you wish 
 */
 
-function summation(/*Your Code Here*/) {
-  /*Your Code Here*/
-}
+function summation(num) {
+   let counter = 0;
+   for(let i = 0; i <= num; i++){
+     counter +=i;
+   }
+   return counter;
+  }
+  
+console.log(summation(4));
