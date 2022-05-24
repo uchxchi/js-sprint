@@ -73,7 +73,7 @@ const zooAnimals = [
   */
 const displayNames = [];
 zooAnimals.forEach(function animalNames (item){
-  return displayNames.push(item.animal_name, item.scientific_name);
+  return displayNames.push(`name: ${item.animal_name}, scientific: ${item.scientific_name}`);
    
 });
 console.log(displayNames)
